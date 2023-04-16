@@ -1,0 +1,23 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+input PresignInput {
+  name: String!
+  type: String!
+  size: Int!
+}
+
+type PresignPayload {
+  url: String!
+  expiresIn: Int!
+}
+
+type Query {
+  hello: String!
+}
+
+type Mutation {
+  presign(input: PresignInput!): PresignPayload!
+}
